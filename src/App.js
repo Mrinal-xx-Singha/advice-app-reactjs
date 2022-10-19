@@ -21,6 +21,7 @@ class App extends React.Component {
 
     }
     render() {
+        // the body 
         const { advice }= this.state
 
         return (
