@@ -79,3 +79,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 �#� �a�d�v�i�c�e�-�a�p�p�-�r�e�a�c�t�j�s�
 �
 �
+
+
+##  --------------------------------------------------------MADE BY - @MRINAL SINGHA
