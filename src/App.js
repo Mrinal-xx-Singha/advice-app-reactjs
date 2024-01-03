@@ -6,18 +6,25 @@ import axios from 'axios';
 import './App.css';
 class App extends React.Component {
     state = {advice : ''};
+
     componentDidMount() {
       this.fetchAdvice();
     }
     fetchAdvice = () => {
         axios.get('https://api.adviceslip.com/advice')
-            .then((response) => {
-                const { advice } = response.data.slip;
-                this.setState({ advice });
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        .then(this.handleAdviceResponse)
+        .catch(this.handleAdviceError)
+         
+
+    }
+
+    handleAdviceResponse = (response) =>{
+        const { advice } =  response.data.slip
+        this.setState({advice})
+    }
+
+    handleAdviceError = (error) =>{
+        console.log(error)
 
     }
     render() {
@@ -25,6 +32,7 @@ class App extends React.Component {
         const { advice }= this.state
 
         return (
+            <>
             <div className='App'>
                 <div className='card'>
                 <h1 className='heading'>{advice}</h1>
@@ -32,7 +40,11 @@ class App extends React.Component {
                     <span>GIVE ME ADVICE!</span>
                 </button>
                 </div>
+                <div className='footer'>Made by @MrinalSingha</div>
+               
             </div>
+            </>
+            
         );
     }
 }
